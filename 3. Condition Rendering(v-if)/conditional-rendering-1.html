@@ -9,20 +9,16 @@
 </head>
 <body>
     <div class="container py-5" id="app">
-        <div v-if="!records.length && showAlert" class="alert alert-warning">
+        <div class="alert alert-warning">
             You have no any records
         </div>
-        <button v-on:click="showAlert = false" class="btn btn-primary">Hide Message</button>
+        <button class="btn btn-primary">Hide Message</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
     new Vue({
-        el: '#app',
-        data: {
-            showAlert: true,
-            records: [1]
-        }
+        el: '#app'        
     })
     </script>
 </body>
