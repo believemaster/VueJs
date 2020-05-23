@@ -19,8 +19,8 @@
         </form>
         <hr>
         <div class="alert alert-info">
-            <p>Uppercase name: {{ (title + " " + name).toUpperCase() }}</p>
-            <p>Lowercase name: {{ (title + " " + name).toLowerCase() }}</p>
+            <p>Uppercase name: {{ upperName() }}</p>
+            <p>Lowercase name: {{ lowerName }}</p>
         </div>
     </div>
 
@@ -32,7 +32,20 @@
             data: {
                 name: 'John Doe',
                 email: 'johndoe@test.com'
-            }            
+            },
+            methods: {
+                upperName () {
+                    console.log("Upper Name");
+                    return (title + " " + this.name).toUpperCase();
+                }
+            },
+            computed: {
+                lowerName() {
+                    // Computed Values are cached and not rerun if no changes (Try this by changing email)
+                    console.log("Computed LowerName");
+                    return (title + " " + this.name).toLowerCase()
+                }
+            }         
         })
     </script>
 </body>
